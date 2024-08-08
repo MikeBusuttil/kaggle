@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "kaggle"
+version = "0.1.0"
+description = ""
+authors = ["Mike Busuttil <mikebusuttil@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.dev.dependencies]
+pandas = "^2.2.2"
+sigfig = "^1.3.3"
+scikit-learn = "^1.5.1"
+ipykernel = "^6.29.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
