@@ -8,11 +8,13 @@ https://www.kaggle.com/learn
 
 #### MVP
 
-- implement the remaining planned transformations (planned xlsx file)
+- handle all basement stuff
+- handle all garage stuff
 - look at test data and see if there are any 1hot/ordinal options that don't exist in the training data
   - ie. Agriculture-zoned
-- devise simple plan for remaining transformations
-- implement remaining transformations
+  - investigate why there's no "Industrial, Agriculture, Residential Low Density Park" in the training data
+- see if test data has any poor kitchen quality (or any other missing values like "Industrial, Agriculture, Residential Low Density Park" zoning)
+- drop rows BEFORE splitting the data
 - try & compare different fitting plans
   - answer the questions below with the comparison
   - pose questions on forums if answers aren't sufficient
@@ -24,6 +26,10 @@ https://www.kaggle.com/learn
 
 #### attempt #2
 
+- handle that 1 house that has Sewage for Utilities
+- handle that 1 house that doesn't have electrical
+- handle sale type & condition
+- pull in how hot the market was at the time of sale (ie. inventory at the time, # bidders, etc.)
 - automate the comparison of fitting techniques, fitting plans, and data set splitting
 
 ## questions
