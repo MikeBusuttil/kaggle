@@ -8,7 +8,6 @@ https://www.kaggle.com/learn
 
 #### MVP
 
-- handle all basement stuff
 - handle all garage stuff
 - look at test data and see if there are any 1hot/ordinal options that don't exist in the training data
   - ie. Agriculture-zoned
