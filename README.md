@@ -6,17 +6,15 @@ https://www.kaggle.com/learn
 
 ### 1-home-data
 
-#### MVP
-
-- try & compare different fitting plans
-  - answer the questions below with the comparison
-  - pose questions on forums if answers aren't sufficient
-  - ie.
-    - make commercially zoned just another 1-hot option
-- try & compare a few different fitting techniques
-- pick the best & submit
-
 #### attempt #2
+
+- see how others did it. Ie... 
+  - https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/discussion/83751
+  - https://www.kaggle.com/code/erikbruin/house-prices-lasso-xgboost-and-a-detailed-eda
+- finish the intermediate course (learn XGBoost)
+- do I need to reverse or remove the inflation calculation?
+
+#### attempt #3
 
 - make separate model for houses without LotFrontage, without garage, without basement
 - handle that 1 house that has Sewage for Utilities
@@ -26,10 +24,12 @@ https://www.kaggle.com/learn
 - pull in how hot the market was at the time of sale (ie. inventory at the time, # bidders, etc.)
 - automate the comparison of fitting techniques, fitting plans, and data set splitting
 - investigate what to do with data (ie. NA's) that's in test data but not training data
+- see which houses are off by the most and what they all have in common to see if there's a column that's throwing things off
 
 ## questions
 
 - When encoding categorized data numerically (ie. Great: 2, average: 1, poor: 0)
   - Would it make a difference if I weighted the values (ie. Great: 2.5, average: 0.5, poor: 0.1)
-- When given a data set that can be segmented in 2
+- When given a data set that can be segmented in 2 (ie. houses with Garages vs houses without)
   - does it make sense to train 2 separate models?
+- Why does changing the SalePrice to float increase the error?
