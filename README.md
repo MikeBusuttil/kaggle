@@ -8,7 +8,7 @@ https://www.kaggle.com/learn
 
 #### attempt #2
 
-- see how others did it. Ie... 
+- see how others did it. Ie...
   - https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/discussion/83751
   - https://www.kaggle.com/code/erikbruin/house-prices-lasso-xgboost-and-a-detailed-eda
 - finish the intermediate course (learn XGBoost)
@@ -33,3 +33,4 @@ https://www.kaggle.com/learn
 - When given a data set that can be segmented in 2 (ie. houses with Garages vs houses without)
   - does it make sense to train 2 separate models?
 - Why does changing the SalePrice to float increase the error?
+- How do I choose the right number of estimators when different validation set splits yield wildly different number of rounds til stopping (+/- ~50%)
