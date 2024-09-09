@@ -11,8 +11,6 @@ https://www.kaggle.com/learn
 - see how others did it. Ie...
   - https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/discussion/83751
   - https://www.kaggle.com/code/erikbruin/house-prices-lasso-xgboost-and-a-detailed-eda
-- finish the intermediate course (learn XGBoost)
-- do I need to reverse or remove the inflation calculation?
 
 #### attempt #3
 
