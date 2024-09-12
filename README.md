@@ -12,40 +12,11 @@ https://www.kaggle.com/learn
 
 #### attempt #4
 
-- write function to impute the mode
-  - and apply everywhere (ie. KitchenQual, Functional, Exterior1st, Exterior2nd, SaleType, ...)
-- If pool quality (PoolQC) isn't defined but PoolArea is, get PoolQC from overall house quality
-- find median LotFrontage in each neighborhood and apply that to any NA's
-- try defaulting GarageYrBlt to YearBuilt (instead of YearRemodAdd) when NA
-- try adding back YearBuilt
-- fix garage for house 2127:
-  - Calculate mode for GarageCond, GarageQual, GarageFinish and apply to house 2127
-- house 2577 appears to not actually have a garage, fix that for GarageCars, GarageArea, GarageType
-- Fix (9-13) houses with only 1-2 missing basement variable by imputing with mode for column
-- Fix houses that appear to not actually have a basement or basement bathroom
-- Fix house 2611 that has Masonry Vaneer area but no type: impute the mode
-- don't get so cute with BsmtFinType1, BsmtFinType2 & just make them ordinal?
-- don't get so cute with Masonry? ... idk, see how that compares
-  - ie. set Masonry = dict('None'=0, 'BrkCmn'=0, 'BrkFace'=1, 'Stone'=2)
-- for MSZoning, see how it compares when imputing the mode for the 4 NA's
-- Compare LandContour 1-hot vs ordinal
-- include year & month sold as 1-hot encoded
-- 7.1: create a TotalBaths from the sum of full baths + 0.5x half baths
-- 7.2:
-  - create remodeled: Y/N
-  - create Age: Year Sold - YearRemodAdd
-  - create IsNew: Y/N if year sold == year built
-- 7.4: create a RichNeighborhood ordinal:
-  - 2 for the 3 richest
-  - 0 for the 3 poorest
-  - 1 for the rest
-- 7.5: create totalSqFeet = GrLivArea + TotalBsmtSF
-  + remove crazy outliers
 - drop highly correlated variables, keeping only the var with the highest correlation to sales price
 - 8.3.3: consider removing vars:
   - absent in train or test set
   - have less than 10 1's
-- ... continue from 8.1 of https://www.kaggle.com/code/erikbruin/house-prices-lasso-xgboost-and-a-detailed-eda
+- take a couple rows and see how they've changed from the input csv
 
 #### attempt #5
 
@@ -57,9 +28,14 @@ https://www.kaggle.com/learn
 
 #### attempt #6
 
+- don't get so cute with BsmtFinType1, BsmtFinType2 & just make them ordinal?
+- don't get so cute with Masonry? ... idk, see how that compares
+  - ie. set Masonry = dict('None'=0, 'BrkCmn'=0, 'BrkFace'=1, 'Stone'=2)
+- Compare LandContour 1-hot vs ordinal
 - make separate model for houses without LotFrontage, without garage, without basement
 - handle that 1 house that has Sewage for Utilities
 - handle that 1 house that doesn't have electrical
+- when applying the median/mode for a given column, consider using median from just the training set vs median from train+test sets
 - handle sale type & condition
 - drop rows BEFORE splitting the data
 - pull in how hot the market was at the time of sale (ie. inventory at the time, # bidders, etc.)
