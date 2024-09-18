@@ -25,6 +25,7 @@ https://www.kaggle.com/learn
 - tune the xgboost model
 - generate sale price with a weighted average where lasso has 2x weight
 - fit/de-skew with unbounded Johnson distribution (ie. https://www.kaggle.com/code/jesucristo/1-house-prices-solution-top-1)
+- consider de-skewing all numeric predictors
 
 #### attempt #6
 
