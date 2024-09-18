@@ -13,6 +13,9 @@ https://www.kaggle.com/learn
 #### attempt #4
 
 - drop highly correlated variables, keeping only the var with the highest correlation to sales price
+  - investigate highly correlated columns for duplication. ie...
+    - BldgType vs MSSubClass
+    - PoolQC & OverallQual (did I screw up the imputation?)
 - 8.3.3: consider removing vars:
   - absent in train or test set
   - have less than 10 1's
@@ -46,6 +49,7 @@ https://www.kaggle.com/learn
 
 ## questions
 
+- When should high correlations between one-hot-encoded and ordinal or numeric data result in dropping columns
 - When encoding categorized data numerically (ie. Great: 2, average: 1, poor: 0)
   - Would it make a difference if I weighted the values (ie. Great: 2.5, average: 0.5, poor: 0.1)
 - When given a data set that can be segmented in 2 (ie. houses with Garages vs houses without)
