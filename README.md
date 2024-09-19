@@ -10,16 +10,10 @@ https://www.kaggle.com/learn
   - https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/discussion/83751
   - https://www.kaggle.com/code/erikbruin/house-prices-lasso-xgboost-and-a-detailed-eda
 
-#### attempt #4
+### ask domain expert questions
 
-- drop highly correlated variables, keeping only the var with the highest correlation to sales price
-  - investigate highly correlated columns for duplication. ie...
-    - BldgType vs MSSubClass
-    - PoolQC & OverallQual (did I screw up the imputation?)
-- 8.3.3: consider removing vars:
-  - absent in train or test set
-  - have less than 10 1's
-- take a couple rows and see how they've changed from the input csv
+- do you think a property being classed "2-STORY 1945 & OLDER" vs "2-STORY 1946 & NEWER" would have significant bearing on the price?
+  - looking at the data might answer this question
 
 #### attempt #5
 
@@ -32,6 +26,16 @@ https://www.kaggle.com/learn
 
 #### attempt #6
 
+- test dropping different number of columns brute force overnight to see which combo gives the best error estimate
+
+#### attempt #7
+
+- think about pulling out specific data from MSSubClass & HouseStyle & dropping the columns:
+  - isPUD
+  - NumberStories
+  - UnfinishedSQFT
+  - isSplitFoyer
+  - isDuplex
 - don't get so cute with BsmtFinType1, BsmtFinType2 & just make them ordinal?
 - don't get so cute with Masonry? ... idk, see how that compares
   - ie. set Masonry = dict('None'=0, 'BrkCmn'=0, 'BrkFace'=1, 'Stone'=2)
@@ -47,8 +51,11 @@ https://www.kaggle.com/learn
 - investigate what to do with data (ie. NA's) that's in test data but not training data
 - see which houses are off by the most and what they all have in common to see if there's a column that's throwing things off
 
-## questions
+## ML questions
 
+- How might I empirically answer these questions since cross-validated error differs by ~20%
+  - ie. how does removing GarageYrBlt perform relative to removing Age vs keeping both
+  - 1 option would be to try every possible cross-validation slicing but that would factorial runtime and surely infeasible
 - When should high correlations between one-hot-encoded and ordinal or numeric data result in dropping columns
 - When encoding categorized data numerically (ie. Great: 2, average: 1, poor: 0)
   - Would it make a difference if I weighted the values (ie. Great: 2.5, average: 0.5, poor: 0.1)
