@@ -2,6 +2,14 @@
 
 https://www.kaggle.com/learn
 
+## Prerequisites
+
+- Poetry
+
+## Quick Start
+
+- poetry install
+
 ## 2do
 
 ### 1-home-data
@@ -10,12 +18,25 @@ https://www.kaggle.com/learn
   - https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/discussion/83751
   - https://www.kaggle.com/code/erikbruin/house-prices-lasso-xgboost-and-a-detailed-eda
 
-### ask domain expert questions
+#### ask domain expert questions
 
 - do you think a property being classed "2-STORY 1945 & OLDER" vs "2-STORY 1946 & NEWER" would have significant bearing on the price?
   - looking at the data might answer this question
 
+#### clean it up and ask for help
+
+- put both methodologies into 1 file and see how their output and submission scores differ
+  - clean up the transformations list by making each item and object
+  - add all column dropping, row dropping, manual edits, and post-fit adjustments to the transformations list
+  - create multiple schemes and see how they compare
+  - verify that they match already-submitted results
+- summarize both methodologies
+
 #### attempt #5
+
+- test dropping different number of columns brute force overnight to see which combo gives the best error estimate
+
+#### attempt #6
 
 - use the lasso regression model
   - tune it right
@@ -23,10 +44,6 @@ https://www.kaggle.com/learn
 - generate sale price with a weighted average where lasso has 2x weight
 - fit/de-skew with unbounded Johnson distribution (ie. https://www.kaggle.com/code/jesucristo/1-house-prices-solution-top-1)
 - consider de-skewing all numeric predictors
-
-#### attempt #6
-
-- test dropping different number of columns brute force overnight to see which combo gives the best error estimate
 
 #### attempt #7
 
