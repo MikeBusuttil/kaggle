@@ -26,13 +26,10 @@ https://www.kaggle.com/learn
 #### clean it up and ask for help
 
 - put both methodologies into 1 file and see how their output and submission scores differ
-  - see how the multiple schemes compare
-    - first debug the new changes
-    - bring over og functions where they differ from new functions
-  - verify that they match already-submitted results
   - clean up the outlier detection code (or move it to talk2me)
     - moving it to talk2me would also mean moving the transformation code to a library which isn't a bad idea... just gotta solve the rebuild-on-save issue first
 - summarize both methodologies
+- report sigfig inability to handle NaN's - give a better error please
 
 #### attempt #5
 
@@ -40,11 +37,11 @@ https://www.kaggle.com/learn
 
 #### attempt #6
 
+- fit/de-skew with unbounded Johnson distribution (ie. https://www.kaggle.com/code/jesucristo/1-house-prices-solution-top-1)
 - use the lasso regression model
   - tune it right
 - tune the xgboost model
 - generate sale price with a weighted average where lasso has 2x weight
-- fit/de-skew with unbounded Johnson distribution (ie. https://www.kaggle.com/code/jesucristo/1-house-prices-solution-top-1)
 - consider de-skewing all numeric predictors
 
 #### attempt #7
