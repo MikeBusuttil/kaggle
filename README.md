@@ -26,12 +26,12 @@ https://www.kaggle.com/learn
 #### clean it up and ask for help
 
 - put both methodologies into 1 file and see how their output and submission scores differ
+  - see how the multiple schemes compare
+    - first debug the new changes
+    - bring over og functions where they differ from new functions
+  - verify that they match already-submitted results
   - clean up the outlier detection code (or move it to talk2me)
     - moving it to talk2me would also mean moving the transformation code to a library which isn't a bad idea... just gotta solve the rebuild-on-save issue first
-  - clean up the transformations list by making each item an object
-    - check notes to make sure the shape looks good
-  - create multiple schemes and see how they compare
-  - verify that they match already-submitted results
 - summarize both methodologies
 
 #### attempt #5
