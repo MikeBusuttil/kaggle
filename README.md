@@ -25,8 +25,6 @@ https://www.kaggle.com/learn
 
 #### finish clean-up
 
-- make sure the RMSE is calculated against the correct untouched training set values
-  - plus give a +/- in dollar amount
 - put both methodologies into 1 file and see how their output and submission scores differ
   - clean up the outlier detection code (or move it to talk2me)
     - moving it to talk2me would also mean moving the transformation code to a library which isn't a bad idea... just gotta solve the rebuild-on-save issue first
