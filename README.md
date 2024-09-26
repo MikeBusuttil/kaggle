@@ -23,12 +23,13 @@ https://www.kaggle.com/learn
 - do you think a property being classed "2-STORY 1945 & OLDER" vs "2-STORY 1946 & NEWER" would have significant bearing on the price?
   - looking at the data might answer this question
 
-#### clean it up and ask for help
+#### finish clean-up
 
+- make sure the RMSE is calculated against the correct untouched training set values
+  - plus give a +/- in dollar amount
 - put both methodologies into 1 file and see how their output and submission scores differ
   - clean up the outlier detection code (or move it to talk2me)
     - moving it to talk2me would also mean moving the transformation code to a library which isn't a bad idea... just gotta solve the rebuild-on-save issue first
-- summarize both methodologies
 - report sigfig inability to handle NaN's - give a better error please
 
 #### attempt #5
@@ -37,7 +38,6 @@ https://www.kaggle.com/learn
 
 #### attempt #6
 
-- fit/de-skew with unbounded Johnson distribution (ie. https://www.kaggle.com/code/jesucristo/1-house-prices-solution-top-1)
 - use the lasso regression model
   - tune it right
 - tune the xgboost model
@@ -69,6 +69,8 @@ https://www.kaggle.com/learn
 
 ## ML questions
 
+- How can I fit/de-skew with unbounded Johnson distribution (ie. https://www.kaggle.com/code/jesucristo/1-house-prices-solution-top-1)
+  - when close to the lower bound it predicts NaN for price
 - How might I empirically answer these questions since cross-validated error differs by ~20%
   - ie. how does removing GarageYrBlt perform relative to removing Age vs keeping both
   - 1 option would be to try every possible cross-validation slicing but that would factorial runtime and surely infeasible
