@@ -30,6 +30,8 @@ https://www.kaggle.com/learn
 - tune the xgboost model
 - generate sale price with a weighted average where lasso has 2x weight
 - consider de-skewing all numeric predictors
+- look at highly correlated columns
+- look at those problematic rows to see if anything stands out
 
 #### attempt #6
 
