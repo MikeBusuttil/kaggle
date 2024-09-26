@@ -23,24 +23,18 @@ https://www.kaggle.com/learn
 - do you think a property being classed "2-STORY 1945 & OLDER" vs "2-STORY 1946 & NEWER" would have significant bearing on the price?
   - looking at the data might answer this question
 
-#### finish clean-up
-
-- put both methodologies into 1 file and see how their output and submission scores differ
-  - clean up the outlier detection code (or move it to talk2me)
-    - moving it to talk2me would also mean moving the transformation code to a library which isn't a bad idea... just gotta solve the rebuild-on-save issue first
-- report sigfig inability to handle NaN's - give a better error please
-
 #### attempt #5
-
-- test dropping different number of columns brute force overnight to see which combo gives the best error estimate
-
-#### attempt #6
 
 - use the lasso regression model
   - tune it right
 - tune the xgboost model
 - generate sale price with a weighted average where lasso has 2x weight
 - consider de-skewing all numeric predictors
+
+#### attempt #6
+
+- figure out why my cross-validation implementation doesn't judge as well as Kaggle
+- test dropping different number of columns brute force overnight to see which combo gives the best error estimate
 
 #### attempt #7
 
