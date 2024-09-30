@@ -25,6 +25,12 @@ https://www.kaggle.com/learn
 
 #### attempt #5
 
+- implement what others have done and see how it compares
+  - continue from 6.2.1 of Erik Bruin's
+- clean up transformation functions:
+  - kill garage_year and other functions which can instead rely on the improved "apply" transformation
+  - find more readable way of grouping similar approaches
+    - maybe even a computed table
 - use the lasso regression model
   - tune it right
 - tune the xgboost model
@@ -75,3 +81,4 @@ https://www.kaggle.com/learn
   - does it make sense to train 2 separate models?
 - Why does changing the SalePrice to float increase the error?
 - How do I choose the right number of estimators when different validation set splits yield wildly different number of rounds til stopping (+/- ~50%)
+- Is there a good way to get a measure of confidence with each prediction from a model (ie. SalePrice for house 123 could be off by 5%, SalePrice for house 456 could be off by like %50)
