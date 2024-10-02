@@ -26,11 +26,17 @@ https://www.kaggle.com/learn
 #### attempt #5
 
 - implement what others have done and see how it compares
-  - continue from 6.2.1 of Erik Bruin's
+  - kill all columns Erik kills
+    - compare with Rmd results
+  - ensure Erik's values are the same as mine
+  - ensure Erik & I agree on RMSE scoring results
 - clean up transformation functions:
   - kill garage_year and other functions which can instead rely on the improved "apply" transformation
   - find more readable way of grouping similar approaches
     - maybe even a computed table
+    - or a "diff":
+      - how columns with the same name differ
+      - what columns 1 has vs the other
 - use the lasso regression model
   - tune it right
 - tune the xgboost model
