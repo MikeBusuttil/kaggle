@@ -25,7 +25,16 @@ https://www.kaggle.com/learn
 
 #### attempt #5
 
+- Find what high %error correlates with
+- Graph correlation between high %error in house price & GrLivArea (or whatever it happens to correlate highly with)
+- Display 2 plots when calculating score instead of current display:
+  - histogram: %error in house price
+    - show error bars as that changes with every cross-validation set
+  - scatter-plot: y (where y correlates the highest with %error in house price) vs %error in house price when calculating score
+    - show error bars as that changes with every cross-validation set
 - implement what others have done and see how it compares
+  - take log1p of all skewed numeric columns (skew > 0.8)
+  - center & scale all numeric columns
   - kill all columns Erik kills
     - compare with Rmd results
   - ensure Erik's values are the same as mine
@@ -49,6 +58,19 @@ https://www.kaggle.com/learn
 
 - figure out why my cross-validation implementation doesn't judge as well as Kaggle
 - test dropping different number of columns brute force overnight to see which combo gives the best error estimate
+
+#### Read Scikit Learn docs for possible improvements
+
+- https://scikit-learn.org/stable/modules/preprocessing.html :
+  - [Scaling data with outliers](https://scikit-learn.org/stable/modules/preprocessing.html#scaling-data-with-outliers)
+  - [Map to Uniform or Gaussian distribution](https://scikit-learn.org/stable/modules/preprocessing.html#non-linear-transformation)
+
+#### Do a write-up & presentation
+
+- make comment on Erik's with some suggestions:
+  - make sqft of each finish type (instead of 1hot + sqft columns for each)
+  - line 1416: `'40'='1 story unf attic'` should be `'40'='1 story fin attic'`
+- attempt to learn scikit-learn's API to see if there's value there (for readability perhaps)
 
 #### attempt #7
 
