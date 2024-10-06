@@ -25,13 +25,6 @@ https://www.kaggle.com/learn
 
 #### attempt #5
 
-- Find what high %error correlates with
-- Graph correlation between high %error in house price & GrLivArea (or whatever it happens to correlate highly with)
-- Display 2 plots when calculating score instead of current display:
-  - histogram: %error in house price
-    - show error bars as that changes with every cross-validation set
-  - scatter-plot: y (where y correlates the highest with %error in house price) vs %error in house price when calculating score
-    - show error bars as that changes with every cross-validation set
 - implement what others have done and see how it compares
   - take log1p of all skewed numeric columns (skew > 0.8)
   - center & scale all numeric columns
@@ -74,6 +67,7 @@ https://www.kaggle.com/learn
 
 #### attempt #7
 
+- look for conditions that lead to 1 of the high % error outliers yielding a low % error
 - think about pulling out specific data from MSSubClass & HouseStyle & dropping the columns:
   - isPUD
   - NumberStories
