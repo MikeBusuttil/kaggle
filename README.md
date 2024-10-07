@@ -26,11 +26,10 @@ https://www.kaggle.com/learn
 #### attempt #5
 
 - implement what others have done and see how it compares
-  - take log1p of all skewed numeric columns (skew > 0.8)
-  - center & scale all numeric columns
-  - kill all columns Erik kills
-    - compare with Rmd results
-  - ensure Erik's values are the same as mine
+  - ensure Erik's training values are the same as mine
+    - export Rmd results to csv
+      - fix KeyError: "['Electrical_nan', 'MSZoning_nan', 'Exterior2nd_nan'] not found in axis"
+      - find out why my scaling (ie. YearBuilt) only agrees to 2 decimal places with Erik's
   - ensure Erik & I agree on RMSE scoring results
 - clean up transformation functions:
   - kill garage_year and other functions which can instead rely on the improved "apply" transformation
