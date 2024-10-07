@@ -27,9 +27,6 @@ https://www.kaggle.com/learn
 
 - implement what others have done and see how it compares
   - ensure Erik's training values are the same as mine
-    - export Rmd results to csv
-      - fix KeyError: "['Electrical_nan', 'MSZoning_nan', 'Exterior2nd_nan'] not found in axis"
-      - find out why my scaling (ie. YearBuilt) only agrees to 2 decimal places with Erik's
   - ensure Erik & I agree on RMSE scoring results
 - clean up transformation functions:
   - kill garage_year and other functions which can instead rely on the improved "apply" transformation
@@ -62,6 +59,8 @@ https://www.kaggle.com/learn
 - make comment on Erik's with some suggestions:
   - make sqft of each finish type (instead of 1hot + sqft columns for each)
   - line 1416: `'40'='1 story unf attic'` should be `'40'='1 story fin attic'`
+  - when fixing skew, should you not apply the transformation obtained from the test set only?
+    - see https://datascience.stackexchange.com/a/39933
 - attempt to learn scikit-learn's API to see if there's value there (for readability perhaps)
 
 #### attempt #7
