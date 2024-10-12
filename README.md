@@ -26,6 +26,11 @@ https://www.kaggle.com/learn
 #### attempt #5
 
 - implement what others have done and see how it compares
+  - why the heck is YrSold2006 missing from Erik's!?
+  - ensure Erik's columns are the same as mine:
+    - why don't I have ExterQual
+    - why doesn't Erik have BldgType_1Fam, Condition1_Artery, Condition2 (all but 1), Electrical FuseA, Exterior1st & Exterior2nd AsbShn, (at least) 1 of the...
+      - fences, foundations, garage type, heading, houseStyle, LandContour, LotConfig, MSZoning, MiscFeature, Neighborhood, RoofStyle, SaleCondition, SaleType, YrSold2006(!?)
   - ensure Erik's training values are the same as mine
   - ensure Erik & I agree on RMSE scoring results
 - clean up transformation functions:
