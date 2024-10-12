@@ -26,13 +26,10 @@ https://www.kaggle.com/learn
 #### attempt #5
 
 - implement what others have done and see how it compares
-  - why the heck is YrSold2006 missing from Erik's!?
-  - ensure Erik's columns are the same as mine:
-    - why don't I have ExterQual
-    - why doesn't Erik have BldgType_1Fam, Condition1_Artery, Condition2 (all but 1), Electrical FuseA, Exterior1st & Exterior2nd AsbShn, (at least) 1 of the...
-      - fences, foundations, garage type, heading, houseStyle, LandContour, LotConfig, MSZoning, MiscFeature, Neighborhood, RoofStyle, SaleCondition, SaleType, YrSold2006(!?)
-  - ensure Erik's training values are the same as mine
+  - check that SalePrice gets skewed the same
   - ensure Erik & I agree on RMSE scoring results
+  - ensure Erik's training values are the same as mine
+    - write script that gets both CSV's to the same order & look for differences
 - clean up transformation functions:
   - kill garage_year and other functions which can instead rely on the improved "apply" transformation
   - find more readable way of grouping similar approaches
@@ -63,6 +60,8 @@ https://www.kaggle.com/learn
 
 - make comment on Erik's with some suggestions:
   - make sqft of each finish type (instead of 1hot + sqft columns for each)
+  - don't integerize or round everything, keep full precision
+  - impute the quality thingie using slope of a line
   - line 1416: `'40'='1 story unf attic'` should be `'40'='1 story fin attic'`
   - when fixing skew, should you not apply the transformation obtained from the test set only?
     - see https://datascience.stackexchange.com/a/39933
@@ -91,6 +90,7 @@ https://www.kaggle.com/learn
 - automate the comparison of fitting techniques, fitting plans, and data set splitting
 - investigate what to do with data (ie. NA's) that's in test data but not training data
 - see which houses are off by the most and what they all have in common to see if there's a column that's throwing things off
+- write a more efficient 1-hot function that is totally unreadable but uses binary to encode in the most column-efficient manner (but can still be readable when it doesn't matter) 
 
 ## ML questions
 
