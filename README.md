@@ -25,7 +25,6 @@ https://www.kaggle.com/learn
 
 #### attempt #5
 
-- see what the best aggregate & 1-off params are (once the night-long run concludes)
 - run Erik's HPO to see if it becomes clear where 454 xgb stopping rounds comes from
 - use the lasso regression model
   - tune it right
