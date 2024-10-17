@@ -25,12 +25,12 @@ https://www.kaggle.com/learn
 
 #### attempt #5
 
-- tune the xgboost model
-  - ensure Erik & I agree on RMSE scoring results
-    - test on gaming &/or Tech PC's
-      - clone, install deps, uncomment, and run each
+- see what the best aggregate & 1-off params are (once the night-long run concludes)
+- run Erik's HPO to see if it becomes clear where 454 xgb stopping rounds comes from
+- use the lasso regression model
+  - tune it right
+- generate sale price with a weighted average where lasso has 2x weight
 - implement what others have done and see how it compares
-  - ensure Erik & I agree on RMSE scoring results
   - ensure Erik's training values are the same as mine
     - write script that gets both CSV's to the same order & look for differences
 - clean up transformation functions:
@@ -40,9 +40,7 @@ https://www.kaggle.com/learn
     - or a "diff":
       - how columns with the same name differ
       - what columns 1 has vs the other
-- use the lasso regression model
-  - tune it right
-- generate sale price with a weighted average where lasso has 2x weight
+- submit with stopping rounds = average from CV, best from CV and see which Kaggle likes best
 
 #### attempt #6
 
@@ -68,6 +66,7 @@ https://www.kaggle.com/learn
   - line 1416: `'40'='1 story unf attic'` should be `'40'='1 story fin attic'`
   - when fixing skew, should you not apply the transformation obtained from the test set only?
     - see https://datascience.stackexchange.com/a/39933
+  - when cross-validating, you can get a sense of your accuracy by continually redrawing the lines and averaging
 - attempt to learn scikit-learn's API to see if there's value there (for readability perhaps)
 
 #### attempt #7
