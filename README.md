@@ -25,8 +25,11 @@ https://www.kaggle.com/learn
 
 #### attempt #5
 
+- tune the xgboost model
+  - ensure Erik & I agree on RMSE scoring results
+    - test on gaming &/or Tech PC's
+      - clone, install deps, uncomment, and run each
 - implement what others have done and see how it compares
-  - check that SalePrice gets skewed the same
   - ensure Erik & I agree on RMSE scoring results
   - ensure Erik's training values are the same as mine
     - write script that gets both CSV's to the same order & look for differences
@@ -39,13 +42,13 @@ https://www.kaggle.com/learn
       - what columns 1 has vs the other
 - use the lasso regression model
   - tune it right
-- tune the xgboost model
 - generate sale price with a weighted average where lasso has 2x weight
-- consider de-skewing all numeric predictors
-- look at highly correlated columns
-- look at those problematic rows to see if anything stands out
 
 #### attempt #6
+
+- attempt improvements over Erik and see if score improves (see write-up section)
+
+#### attempt #7
 
 - figure out why my cross-validation implementation doesn't judge as well as Kaggle
 - test dropping different number of columns brute force overnight to see which combo gives the best error estimate
