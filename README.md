@@ -21,9 +21,10 @@ https://www.kaggle.com/learn
 
 #### attempt #5
 
-- why the discrepancy with Erik's?
-  - generate the output multiple times (on both sides) and see if it changes each time
-  - write script that gets both training CSV's to the same order & look for differences
+- why the discrepancy with Erik's XGB & Lasso predictions?
+  - why the low number of digits in mikes xgb?
+  - ...no clue at all - analyze someone who did a Python approach to see how they do it
+  - import erik's data and see if that TINY diff matters (fat chance)
 - submit
 - clean up transformation functions:
   - kill garage_year and other functions which can instead rely on the improved "apply" transformation
