@@ -14,10 +14,6 @@ https://www.kaggle.com/learn
 
 ### 1-home-data
 
-- see how others did it for my next attempt. Ie...
-  - https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/discussion/83751
-  - https://www.kaggle.com/code/erikbruin/house-prices-lasso-xgboost-and-a-detailed-eda
-
 #### ask domain expert questions
 
 - do you think a property being classed "2-STORY 1945 & OLDER" vs "2-STORY 1946 & NEWER" would have significant bearing on the price?
@@ -25,12 +21,10 @@ https://www.kaggle.com/learn
 
 #### attempt #5
 
-- use the lasso regression model
-  - tune it right
-- generate sale price with a weighted average where lasso has 2x weight
-- implement what others have done and see how it compares
-  - ensure Erik's training values are the same as mine
-    - write script that gets both CSV's to the same order & look for differences
+- why the discrepancy with Erik's?
+  - generate the output multiple times (on both sides) and see if it changes each time
+  - write script that gets both training CSV's to the same order & look for differences
+- submit
 - clean up transformation functions:
   - kill garage_year and other functions which can instead rely on the improved "apply" transformation
   - find more readable way of grouping similar approaches
@@ -42,11 +36,20 @@ https://www.kaggle.com/learn
 
 #### attempt #6
 
-- attempt improvements over Erik and see if score improves (see write-up section)
+- attempt improvements over Erik and see if score improves:
+  - fix the issue of overvalued cheap houses and undervalued expensive houses (dirty hack or better SalesPrice scaling)
+  - make sqft of each finish type (instead of 1hot + sqft columns for each)
+  - don't integerize or round everything, keep full precision
+  - impute the quality thingie using slope of a line
+  - blend & stack models: https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/discussion/83751 2nd link
+  - when fixing skew, should you not apply the transformation obtained from the test set only?
+    - see https://datascience.stackexchange.com/a/39933
+  - when cross-validating, you can get a sense of your accuracy by continually redrawing the lines and averaging
+    - but perhaps this isn't worth the runtime trade-off
 
 #### attempt #7
 
-- figure out why my cross-validation implementation doesn't judge as well as Kaggle
+- figure out why my cross-validation implementation doesn't judge as well as Kaggle & Caret's
 - test dropping different number of columns brute force overnight to see which combo gives the best error estimate
 
 #### Read Scikit Learn docs for possible improvements
@@ -57,21 +60,16 @@ https://www.kaggle.com/learn
 
 #### Do a write-up & presentation
 
+- credit the sources (with version #s)
 - look at accuracy of the different models vs house price to explain how multiple models makes things better
   - ie. 1 model being way off will be brought back to reality 
-- make comment on Erik's with some suggestions:
-  - fix the issue of overvalued cheap houses and undervalued expensive houses (dirty hack or better SalesPrice scaling)
-  - make sqft of each finish type (instead of 1hot + sqft columns for each)
-  - don't integerize or round everything, keep full precision
-  - impute the quality thingie using slope of a line
+- make comment on [Erik's](https://www.kaggle.com/code/erikbruin/house-prices-lasso-xgboost-and-a-detailed-eda) with some suggestions AFTER write-up & presentation:
   - line 1416: `'40'='1 story unf attic'` should be `'40'='1 story fin attic'`
   - spelling mistakes (ie. line 2482 - 2484 "paid of", "definitly", "inproved")
-  - when fixing skew, should you not apply the transformation obtained from the test set only?
-    - see https://datascience.stackexchange.com/a/39933
-  - when cross-validating, you can get a sense of your accuracy by continually redrawing the lines and averaging
-    - but perhaps this isn't worth the runtime trade-off
+  - Here's where to improve these results (use findings from attempt #6)
 - attempt to learn scikit-learn's API to see if there's value there (for readability perhaps & CV runtime I bet)
   - xgb cv model for HPO
+- attempt to learn PyCaret's API (for readability & dev speed)
 
 #### attempt #7
 
