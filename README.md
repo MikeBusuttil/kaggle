@@ -25,7 +25,6 @@ https://www.kaggle.com/learn
 
 #### attempt #5
 
-- run Erik's HPO to see if it becomes clear where 454 xgb stopping rounds comes from
 - use the lasso regression model
   - tune it right
 - generate sale price with a weighted average where lasso has 2x weight
@@ -58,15 +57,21 @@ https://www.kaggle.com/learn
 
 #### Do a write-up & presentation
 
+- look at accuracy of the different models vs house price to explain how multiple models makes things better
+  - ie. 1 model being way off will be brought back to reality 
 - make comment on Erik's with some suggestions:
+  - fix the issue of overvalued cheap houses and undervalued expensive houses (dirty hack or better SalesPrice scaling)
   - make sqft of each finish type (instead of 1hot + sqft columns for each)
   - don't integerize or round everything, keep full precision
   - impute the quality thingie using slope of a line
   - line 1416: `'40'='1 story unf attic'` should be `'40'='1 story fin attic'`
+  - spelling mistakes (ie. line 2482 - 2484 "paid of", "definitly", "inproved")
   - when fixing skew, should you not apply the transformation obtained from the test set only?
     - see https://datascience.stackexchange.com/a/39933
   - when cross-validating, you can get a sense of your accuracy by continually redrawing the lines and averaging
-- attempt to learn scikit-learn's API to see if there's value there (for readability perhaps)
+    - but perhaps this isn't worth the runtime trade-off
+- attempt to learn scikit-learn's API to see if there's value there (for readability perhaps & CV runtime I bet)
+  - xgb cv model for HPO
 
 #### attempt #7
 
