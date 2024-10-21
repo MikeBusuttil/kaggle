@@ -22,17 +22,12 @@ https://www.kaggle.com/learn
 #### attempt #5
 
 - why the discrepancy with Erik's XGB & Lasso predictions?
-  - why the low number of digits in mikes xgb?
   - ...no clue at all - analyze someone who did a Python approach to see how they do it
+    - why does Lasso alpha depend so heavily on number of CV splits?... try changing the random seed to see how that makes alpha vary
+    - look into why my custom CV differs from Python built-in CV
+  - why the low number of digits in mikes xgb?
   - import erik's data and see if that TINY diff matters (fat chance)
 - submit
-- clean up transformation functions:
-  - kill garage_year and other functions which can instead rely on the improved "apply" transformation
-  - find more readable way of grouping similar approaches
-    - maybe even a computed table
-    - or a "diff":
-      - how columns with the same name differ
-      - what columns 1 has vs the other
 - submit with stopping rounds = average from CV, best from CV and see which Kaggle likes best
 
 #### attempt #6
@@ -62,6 +57,14 @@ https://www.kaggle.com/learn
 #### Do a write-up & presentation
 
 - credit the sources (with version #s)
+- code clean up:
+  - any step that takes a long time to complete should be a separate ipynb that saves it's output for other steps to consume
+  - kill garage_year and other transformation functions which can instead rely on the improved "apply" transformation
+  - find more readable way of grouping similar transformation approaches
+    - maybe even a computed table
+    - or a "diff":
+      - how columns with the same name differ
+      - what columns 1 has vs the other
 - look at accuracy of the different models vs house price to explain how multiple models makes things better
   - ie. 1 model being way off will be brought back to reality 
 - make comment on [Erik's](https://www.kaggle.com/code/erikbruin/house-prices-lasso-xgboost-and-a-detailed-eda) with some suggestions AFTER write-up & presentation:
