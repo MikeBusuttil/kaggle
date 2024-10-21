@@ -23,9 +23,9 @@ https://www.kaggle.com/learn
 
 - why the discrepancy with Erik's XGB & Lasso predictions?
   - ...no clue at all - analyze someone who did a Python approach to see how they do it
-    - why does Lasso alpha depend so heavily on number of CV splits?... try changing the random seed to see how that makes alpha vary
-    - look into why my custom CV differs from Python built-in CV
-  - why the low number of digits in mikes xgb?
+    - Try to get XGB agreement to within 5%
+  - run a search grid with different Lasso parameters (CV splits, alphas, random_state's) to find which has lowest RMSE score against Erik
+    - he used seq(0.0001,0.1,by = 0.0005) for alphas, 5-fold CV, set.seed(27042018)
   - import erik's data and see if that TINY diff matters (fat chance)
 - submit
 - submit with stopping rounds = average from CV, best from CV and see which Kaggle likes best
@@ -102,6 +102,10 @@ https://www.kaggle.com/learn
 
 ## ML questions
 
+- why does my custom CV differ so wildly from Python's built-in CV
+  - clean it up and publish it asking for help.
+- why does Lasso alpha depend so heavily on number of CV splits &/or random_state?
+  - the difference in alpha swings price disagreements up to 20%
 - How can I fit/de-skew with unbounded Johnson distribution (ie. https://www.kaggle.com/code/jesucristo/1-house-prices-solution-top-1)
   - when close to the lower bound it predicts NaN for price
 - How might I empirically answer these questions since cross-validated error differs by ~20%
