@@ -22,13 +22,8 @@ https://www.kaggle.com/learn
 #### attempt #5
 
 - why the discrepancy with Erik's XGB & Lasso predictions?
-  - ...no clue at all - analyze someone who did a Python approach to see how they do it
-    - Try to get XGB agreement to within 5%
-  - run a search grid with different Lasso parameters (CV splits, alphas, random_state's) to find which has lowest RMSE score against Erik
-    - he used seq(0.0001,0.1,by = 0.0005) for alphas, 5-fold CV, set.seed(27042018)
   - import erik's data and see if that TINY diff matters (fat chance)
 - submit
-- submit with stopping rounds = average from CV, best from CV and see which Kaggle likes best
 
 #### attempt #6
 
@@ -102,6 +97,7 @@ https://www.kaggle.com/learn
 
 ## ML questions
 
+- why do my XGB predictions (from Python) differ so wildly from Erik's (from R) (up to 15%-20% depending on training parameters)
 - why does my custom CV differ so wildly from Python's built-in CV
   - clean it up and publish it asking for help.
 - why does Lasso alpha depend so heavily on number of CV splits &/or random_state?
