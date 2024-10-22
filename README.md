@@ -21,8 +21,6 @@ https://www.kaggle.com/learn
 
 #### attempt #5
 
-- why the discrepancy with Erik's XGB & Lasso predictions?
-  - import erik's data and see if that TINY diff matters (fat chance)
 - submit
 
 #### attempt #6
