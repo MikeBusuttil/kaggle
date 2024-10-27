@@ -1392,17 +1392,17 @@ stats = ["scipy (>=1.7)", "statsmodels (>=0.12)"]
 
 [[package]]
 name = "sigfig"
-version = "1.3.3"
+version = "1.3.17"
 description = "Python library for rounding numbers (with expected results)"
 optional = false
-python-versions = "*"
+python-versions = "<4.0,>=3.6"
 files = [
-    {file = "sigfig-1.3.3-py3-none-any.whl", hash = "sha256:7df6dfc45d09ee7e43a9418e944fcf06f8654477af263e3f0c2bee4234d6a84e"},
-    {file = "sigfig-1.3.3.tar.gz", hash = "sha256:d6a720029c2fdb0f1413b14ba72f92db9ab95fe816d198fe7f6311d2bbdc5b61"},
+    {file = "sigfig-1.3.17-py3-none-any.whl", hash = "sha256:2b532bf7b12ba81603b273a406cfda35eda9b2329dc08dcd45ce45985ba8c631"},
+    {file = "sigfig-1.3.17.tar.gz", hash = "sha256:490fccae9ffcaa15377b215b1d8ddba0f33453053dd8d3a299bf0c5c954429a0"},
 ]
 
 [package.dependencies]
-SortedContainers = "*"
+sortedcontainers = ">=2.4.0,<3.0.0"
 
 [[package]]
 name = "six"

@@ -19,13 +19,10 @@ https://www.kaggle.com/learn
 - do you think a property being classed "2-STORY 1945 & OLDER" vs "2-STORY 1946 & NEWER" would have significant bearing on the price?
   - looking at the data might answer this question
 
-#### attempt #5
-
-- submit
-
 #### attempt #6
 
 - attempt improvements over Erik and see if score improves:
+  - get rid of the costly roundings
   - fix the issue of overvalued cheap houses and undervalued expensive houses (dirty hack or better SalesPrice scaling)
   - make sqft of each finish type (instead of 1hot + sqft columns for each)
   - don't integerize or round everything, keep full precision
