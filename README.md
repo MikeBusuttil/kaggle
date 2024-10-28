@@ -22,16 +22,14 @@ https://www.kaggle.com/learn
 #### attempt #6
 
 - attempt improvements over Erik and see if score improves:
-  - get rid of the costly roundings
   - fix the issue of overvalued cheap houses and undervalued expensive houses (dirty hack or better SalesPrice scaling)
-  - make sqft of each finish type (instead of 1hot + sqft columns for each)
-  - don't integerize or round everything, keep full precision
-  - impute the quality thingie using slope of a line
   - blend & stack models: https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/discussion/83751 2nd link
-  - when fixing skew, should you not apply the transformation obtained from the test set only?
+  - when fixing skew & imputing, should you not apply the transformation obtained from the test set only?
     - see https://datascience.stackexchange.com/a/39933
-  - when cross-validating, you can get a sense of your accuracy by continually redrawing the lines and averaging
-    - but perhaps this isn't worth the runtime trade-off
+- see how it compares when comining all combinable vars.  Ie.
+  - kitchenquality + #kitches => "Excellent Kitchens", "Good Kitchens", "Typical Kitchens", etc
+  - fireplacesQu + fireplaces
+  - PoolQC + PoolArea
 
 #### attempt #7
 
@@ -67,27 +65,20 @@ https://www.kaggle.com/learn
 
 #### attempt #7
 
-- look for conditions that lead to 1 of the high % error outliers yielding a low % error
 - think about pulling out specific data from MSSubClass & HouseStyle & dropping the columns:
   - isPUD
   - NumberStories
   - UnfinishedSQFT
   - isSplitFoyer
   - isDuplex
-- don't get so cute with BsmtFinType1, BsmtFinType2 & just make them ordinal?
-- don't get so cute with Masonry? ... idk, see how that compares
-  - ie. set Masonry = dict('None'=0, 'BrkCmn'=0, 'BrkFace'=1, 'Stone'=2)
 - Compare LandContour 1-hot vs ordinal
+- attempt dropping more sparsely populated columns
 - make separate model for houses without LotFrontage, without garage, without basement
 - handle that 1 house that has Sewage for Utilities
 - handle that 1 house that doesn't have electrical
 - when applying the median/mode for a given column, consider using median from just the training set vs median from train+test sets
 - handle sale type & condition
 - drop rows BEFORE splitting the data
-- pull in how hot the market was at the time of sale (ie. inventory at the time, # bidders, etc.)
-- automate the comparison of fitting techniques, fitting plans, and data set splitting
-- investigate what to do with data (ie. NA's) that's in test data but not training data
-- see which houses are off by the most and what they all have in common to see if there's a column that's throwing things off
 - write a more efficient 1-hot function that is totally unreadable but uses binary to encode in the most column-efficient manner (but can still be readable when it doesn't matter) 
 
 ## ML questions
