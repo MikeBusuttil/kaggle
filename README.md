@@ -22,7 +22,8 @@ https://www.kaggle.com/learn
 #### attempt #6
 
 - attempt improvements over Erik and see if score improves:
-  - fix the issue of overvalued cheap houses and undervalued expensive houses (dirty hack or better SalesPrice scaling)
+  - fix the issue of overvalued cheap houses and undervalued expensive houses:
+    - see how that other guys shift compares to mine
   - blend & stack models: https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/discussion/83751 2nd link
   - when fixing skew & imputing, should you not apply the transformation obtained from the test set only?
     - see https://datascience.stackexchange.com/a/39933
