@@ -27,8 +27,8 @@ https://www.kaggle.com/learn
   - blend & stack models: https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/discussion/83751 2nd link
   - when fixing skew & imputing, should you not apply the transformation obtained from the test set only?
     - see https://datascience.stackexchange.com/a/39933
-- see how it compares when comining all combinable vars.  Ie.
-  - kitchenquality + #kitches => "Excellent Kitchens", "Good Kitchens", "Typical Kitchens", etc
+- see how it compares when combining all combinable vars.  Ie.
+  - kitchenQuality + #kitchens => "Excellent Kitchens", "Good Kitchens", "Typical Kitchens", etc
   - fireplacesQu + fireplaces
   - PoolQC + PoolArea
 
