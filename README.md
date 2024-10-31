@@ -22,9 +22,7 @@ https://www.kaggle.com/learn
 #### attempt #6
 
 - attempt improvements over Erik and see if score improves:
-  - blend & stack models: https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/discussion/83751 2nd link
-    - stack em
-    - optimize parameters for each (pay for remote compute over night)
+  - optimize parameters for each model(pay for remote compute over night)
   - what is this "MICE" suggestion: https://www.kaggle.com/code/agehsbarg/top-10-0-10943-stacking-mice-and-brutal-force
   - when fixing skew & imputing, should you not apply the transformation obtained from the test set only?
     - see https://datascience.stackexchange.com/a/39933
