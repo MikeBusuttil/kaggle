@@ -22,15 +22,19 @@ https://www.kaggle.com/learn
 #### attempt #6
 
 - attempt improvements over Erik and see if score improves:
-  - fix the issue of overvalued cheap houses and undervalued expensive houses:
-    - see how that other guys shift compares to mine
   - blend & stack models: https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/discussion/83751 2nd link
+    - stack em
+    - optimize parameters for each (pay for remote compute over night)
+  - what is this "MICE" suggestion: https://www.kaggle.com/code/agehsbarg/top-10-0-10943-stacking-mice-and-brutal-force
   - when fixing skew & imputing, should you not apply the transformation obtained from the test set only?
     - see https://datascience.stackexchange.com/a/39933
+  - try adding X^2 of these predictors (as per https://www.kaggle.com/code/agehsbarg/top-10-0-10943-stacking-mice-and-brutal-force):
+    - ['YearRemodAdd', 'LotFrontage_log', 'TotalBsmtSF_log', '1stFlrSF_log', '2ndFlrSF_log', 'GrLivArea_log', 'GarageCars_log', 'GarageArea_log', 'OverallQual','ExterQual','BsmtQual','GarageQual', 'FireplaceQu','KitchenQual']
 - see how it compares when combining all combinable vars.  Ie.
   - kitchenQuality + #kitchens => "Excellent Kitchens", "Good Kitchens", "Typical Kitchens", etc
   - fireplacesQu + fireplaces
   - PoolQC + PoolArea
+- go over all the transformation decisions 1 more time to see if there are any worth doing differently
 
 #### attempt #7
 
@@ -63,6 +67,8 @@ https://www.kaggle.com/learn
 - attempt to learn scikit-learn's API to see if there's value there (for readability perhaps & CV runtime I bet)
   - xgb cv model for HPO
 - attempt to learn PyCaret's API (for readability & dev speed)
+- ask why there's a clear trend of overvalued cheap houses and undervalued expensive houses...
+  - but all my attempts to correct for it fail
 
 #### attempt #7
 
