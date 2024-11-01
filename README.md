@@ -22,17 +22,19 @@ https://www.kaggle.com/learn
 #### attempt #6
 
 - attempt improvements over Erik and see if score improves:
+  - see how it compares when combining all combinable vars.  Ie.
+    - kitchenQuality + #kitchens => "Excellent Kitchens", "Good Kitchens", "Typical Kitchens", etc
+    - fireplacesQu + fireplaces
+    - PoolQC + PoolArea
+    - basement SF stuff
+    - garage SF stuff
   - optimize parameters for each model(pay for remote compute over night)
   - what is this "MICE" suggestion: https://www.kaggle.com/code/agehsbarg/top-10-0-10943-stacking-mice-and-brutal-force
   - when fixing skew & imputing, should you not apply the transformation obtained from the test set only?
     - see https://datascience.stackexchange.com/a/39933
-  - try adding X^2 of these predictors (as per https://www.kaggle.com/code/agehsbarg/top-10-0-10943-stacking-mice-and-brutal-force):
-    - ['YearRemodAdd', 'LotFrontage_log', 'TotalBsmtSF_log', '1stFlrSF_log', '2ndFlrSF_log', 'GrLivArea_log', 'GarageCars_log', 'GarageArea_log', 'OverallQual','ExterQual','BsmtQual','GarageQual', 'FireplaceQu','KitchenQual']
-- see how it compares when combining all combinable vars.  Ie.
-  - kitchenQuality + #kitchens => "Excellent Kitchens", "Good Kitchens", "Typical Kitchens", etc
-  - fireplacesQu + fireplaces
-  - PoolQC + PoolArea
+  - remove OverallQual and GrLivArea outliers
 - go over all the transformation decisions 1 more time to see if there are any worth doing differently
+  - ie. make Fence ordinal
 
 #### attempt #7
 
