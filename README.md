@@ -35,6 +35,7 @@ https://www.kaggle.com/learn
   - remove OverallQual and GrLivArea outliers
 - go over all the transformation decisions 1 more time to see if there are any worth doing differently
   - ie. make Fence ordinal
+  - combine building type & MSSubclass
 
 #### attempt #7
 
