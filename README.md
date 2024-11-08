@@ -22,13 +22,15 @@ https://www.kaggle.com/learn
 #### attempt #6
 
 - attempt improvements over Erik and see if score improves:
-  - see how it compares when combining all combinable vars.  Ie.
-    - kitchenQuality + #kitchens => "Excellent Kitchens", "Good Kitchens", "Typical Kitchens", etc
-    - fireplacesQu + fireplaces
-    - PoolQC + PoolArea
-    - basement SF stuff
-    - garage SF stuff
-  - optimize parameters for each model(pay for remote compute over night)
+  - optimize parameters for each model (pay for remote compute over night)
+    - write a script that'll run on a cloud machine given what it needs (transformed training data)
+      - deploy the server (& update the docs as necessary)
+        - select www, ww2, Tech PC, new machine
+        - follow deploy instructions
+      - deploy the workstation on Tech PC
+      - create script for all models
+      - deploy worker scripts on some remote compute
+        - refactor to re-use code
   - what is this "MICE" suggestion: https://www.kaggle.com/code/agehsbarg/top-10-0-10943-stacking-mice-and-brutal-force
   - when fixing skew & imputing, should you not apply the transformation obtained from the test set only?
     - see https://datascience.stackexchange.com/a/39933
