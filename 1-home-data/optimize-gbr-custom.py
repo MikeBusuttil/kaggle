@@ -47,8 +47,7 @@ def store_predictions(predictions, params, model=""):
     post(f"{url}/store", json={"records": predictions.to_dict('records')} | authorization)
 
 def stopped_changing(score):
-    global scores
-    global streak
+    global scores, streak
     scores.append(score)
     score = round(score, std(scores), format='Drake')
     if score == streak["value"]:

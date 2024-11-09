@@ -7,10 +7,10 @@
 git clone https://github.com/MikeBusuttil/kaggle.git
 cd kaggle/data-dump
 ```
-- create DNS A-record for dump.techiteasy.ca to point to the public IP of the server
+- create DNS A-record for dump.techiteasy.ca and dump-admin.techiteasy.ca to point to the public IP of the server
 - define environment secrets
 ```bash
-python generate_env.py
+python3 generate_env.py
 source .env
 ```
 - fire up the environment
@@ -24,17 +24,24 @@ sudo docker compose -f db-portal.yml up -d
 - clone to ubuntu machine with [poetry](https://python-poetry.org/docs/#installation) installed
 ```bash
 git clone https://github.com/MikeBusuttil/kaggle.git
+apt install pipx
 pipx install poetry
-poetry completions bash >> ~/.bash_completion
 cd kaggle
 ```
-- copy `CLIENT_KEY` from server to root `.env`
-- fire up environment
+- copy `AGENT_KEY` from server to repo root `.env`
+- re-login & fire up environment
 ```bash
+poetry self add poetry-plugin-dotenv
 poetry install
-source .env
 ```
 - run a worker
 ```bash
-poetry run python 1-home-data/optimize-gbr-custom.py
+nohup poetry run python -u 1-home-data/optimize-gbr-custom.py &
+tail -f kaggle/nohup.out
 ```
+
+## Browse Results
+
+To browse results visit https://dump-admin.techiteasy.ca with username `admin` and password from `ADMIN_KEY` in the server's `.env` file
+
+## Analysis TBD

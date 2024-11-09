@@ -24,13 +24,13 @@ https://www.kaggle.com/learn
 - attempt improvements over Erik and see if score improves:
   - optimize parameters for each model (pay for remote compute over night)
     - write a script that'll run on a cloud machine given what it needs (transformed training data)
-      - deploy the server (& update the docs as necessary)
-        - select www, ww2, Tech PC, new machine
-        - follow deploy instructions
-      - deploy the workstation on Tech PC
+      - add features / refactor to:
+        - pickup where left off (in case of error)
+        - run in parallel
+        - re-use code
       - create script for all models
-      - deploy worker scripts on some remote compute
-        - refactor to re-use code
+      - benchmark different compute options (Tech PC, 2GB DO instance, laptop, etc)
+      - write data analysis scripts/tools
   - what is this "MICE" suggestion: https://www.kaggle.com/code/agehsbarg/top-10-0-10943-stacking-mice-and-brutal-force
   - when fixing skew & imputing, should you not apply the transformation obtained from the test set only?
     - see https://datascience.stackexchange.com/a/39933
