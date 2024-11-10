@@ -48,6 +48,39 @@ def get(filter):
     results = readings.find(search_criteria)
     return list(results)
 
+def combinations(fields):
+    readings = MongoClient(**credentials).dump.measurements.with_options(**options)
+    results = readings.aggregate([
+        {
+            "$group": {
+                "_id": { field: f"${field}" for field in fields },
+                "totalRecords": { "$count": {} },
+                # "totalIterations": { "$sum": 1/1450 },
+            },
+        }
+    ])
+    return results
+
+def score_combinations():
+    output = []
+    fields = [
+        "n_estimators",
+        "learning_rate",
+        "max_depth",
+        'max_features',
+        'min_samples_leaf',
+        'min_samples_split',
+        'loss',
+        'random_state',
+    ]
+    for f in combinations(fields):
+        output.append(f["_id"] | {
+            "score": rmse({field: f["_id"][field] for field in fields}),
+            "totalRecords": f["totalRecords"],
+            "totalIterations": f["totalRecords"]/1450
+        })
+    return output
+
 if __name__ == '__main__':
     # filter = {
     #     "n_estimators": 500,
@@ -59,4 +92,5 @@ if __name__ == '__main__':
     #     'loss': 'huber',
     #     'random_state': 42,
     # }
+    #print(score_combinations())
     initialize()

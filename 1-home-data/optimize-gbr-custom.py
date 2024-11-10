@@ -8,6 +8,7 @@ from requests import post
 from os import environ
 from pathlib import Path
 
+re_collect = False
 max_iterations = 50
 max_duration = timedelta(minutes=15)
 max_streak = 20
@@ -69,6 +70,13 @@ def its_time_to_stop(params={}, elapsed=None, iterations=None, model=""):
         return True
     return False
 
+def already_collected(params, model="gbr"):
+    try:
+        post(f"{url}/rmse", json={"filter": params|{"model": model}} | authorization).json()
+        return True
+    except:
+        return False
+
 def generate_cross_validation_sets(data=data, sets=5):
     ids = data["Id"].to_list()
     shuffle(ids)
@@ -105,7 +113,7 @@ def cross_validate(test_ids, params={}):
 
     details = pd.DataFrame({"SalePrice": validation_price_original, "predictions": predictions})
     details["Id"] = details.index
-        
+
     return details
 
 def generate_cross_validation_sets(data=full_training_data, sets=10):
@@ -123,6 +131,9 @@ def hpo_grid(grid_options):
 
 options = len([_ for _ in hpo_grid(hpo_grid_options)])
 for option, params in enumerate(hpo_grid(hpo_grid_options)):
+    if not re_collect and already_collected(params):
+        log("Already collected", params)
+        continue
     scores = []
     start_time = datetime.now()
     iterations = 0

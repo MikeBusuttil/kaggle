@@ -24,13 +24,17 @@ https://www.kaggle.com/learn
 - attempt improvements over Erik and see if score improves:
   - optimize parameters for each model (pay for remote compute over night)
     - write a script that'll run on a cloud machine given what it needs (transformed training data)
+      - write data analysis scripts/tools
       - add features / refactor to:
-        - pickup where left off (in case of error)
+        - basic retry mechanism when saving fails (ie. https://stackoverflow.com/questions/15431044/can-i-set-max-retries-for-requests-request)
         - run in parallel
         - re-use code
       - create script for all models
       - benchmark different compute options (Tech PC, 2GB DO instance, laptop, etc)
-      - write data analysis scripts/tools
+        - why was it taking like 1min between iterations after running for ~12hrs?
+        - see how much it'd cost to use something like lambda
+    - consider saving time by learning the best way to tune each model instead of brute force (which should work):
+      - https://www.analyticsvidhya.com/blog/2016/02/complete-guide-parameter-tuning-gradient-boosting-gbm-python/
   - what is this "MICE" suggestion: https://www.kaggle.com/code/agehsbarg/top-10-0-10943-stacking-mice-and-brutal-force
   - when fixing skew & imputing, should you not apply the transformation obtained from the test set only?
     - see https://datascience.stackexchange.com/a/39933
