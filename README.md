@@ -26,7 +26,6 @@ https://www.kaggle.com/learn
     - write a script that'll run on a cloud machine given what it needs (transformed training data)
       - write data analysis scripts/tools
       - add features / refactor to:
-        - basic retry mechanism when saving fails (ie. https://stackoverflow.com/questions/15431044/can-i-set-max-retries-for-requests-request)
         - run in parallel
         - re-use code
       - create script for all models

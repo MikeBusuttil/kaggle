@@ -4,7 +4,8 @@ import pandas as pd
 from random import shuffle
 from datetime import datetime, timedelta
 from itertools import product
-from requests import post
+from requests import post, Session
+from requests.adapters import HTTPAdapter, Retry
 from os import environ
 from pathlib import Path
 
@@ -27,6 +28,9 @@ hpo_grid_options = {
     'random_state': [42, 420],
 }
 
+retry = Session()
+retry.mount('https://', HTTPAdapter(max_retries=Retry(total=3, backoff_factor=0.1)))
+
 authorization = {"key": environ.get("AGENT_KEY")}
 url = "https://dump.techiteasy.ca"
 data = pd.read_csv(Path(__file__).parent / 'mike_all.csv')
@@ -45,7 +49,7 @@ def store_predictions(predictions, params, model=""):
     for param, value in params.items():
         predictions[param] = value
     predictions["model"] = model
-    post(f"{url}/store", json={"records": predictions.to_dict('records')} | authorization)
+    retry.post(f"{url}/store", json={"records": predictions.to_dict('records')} | authorization)
 
 def stopped_changing(score):
     global scores, streak
@@ -65,7 +69,7 @@ def its_time_to_stop(params={}, elapsed=None, iterations=None, model=""):
         return True
     if iterations > max_iterations:
         return True
-    score = post(f"{url}/rmse", json={"filter": params|{"model": model}} | authorization).json()
+    score = retry.post(f"{url}/rmse", json={"filter": params|{"model": model}} | authorization).json()
     if stopped_changing(score):
         return True
     return False
